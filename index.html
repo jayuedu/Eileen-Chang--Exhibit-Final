@@ -572,6 +572,178 @@ nav button.active { color: var(--cream); border-bottom-color: var(--red2); }
 }
 .prose em { font-style: italic; }
 .divider { border: none; border-top: 1px solid var(--border2); margin: 40px 0; }
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet (768px) & Mobile (640px and below)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Tablet & small laptop ── */
+@media (max-width: 1024px) {
+  .content-wrap { padding: 48px 32px 64px; }
+  .theory-grid { grid-template-columns: 1fr; gap: 16px; }
+  .method-steps { grid-template-columns: 1fr; }
+  .method-step { border-right: none; border-bottom: 1px solid var(--border); }
+  .method-step:last-child { border-bottom: none; }
+  .insight-row { grid-template-columns: 1fr; }
+  .net-grid { grid-template-columns: 1fr; gap: 12px; }
+  .data-grid { grid-template-columns: repeat(2, 1fr); }
+  .finding-grid { grid-template-columns: 1fr; }
+  .key-findings-box { padding: 28px 32px; }
+}
+
+/* ── Mobile landscape & tablet portrait ── */
+@media (max-width: 768px) {
+  body { font-size: 15.5px; line-height: 1.7; }
+
+  /* Header collapses to two stacked rows */
+  .site-header {
+    flex-direction: column;
+    padding: 0;
+    align-items: stretch;
+  }
+  .site-title {
+    padding: 12px 16px;
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
+    border-bottom: 1px solid #3A3530;
+  }
+  .site-title span { display: block; margin-top: 2px; }
+
+  nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav button {
+    padding: 10px 14px;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  /* Hero collapses to single column */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left, .hero-right {
+    padding: 48px 28px 40px;
+  }
+  .hero-left::after { display: none; }
+  .hero-title { font-size: clamp(26px, 7vw, 38px); }
+  .hero-subtitle { font-size: 16px; margin-bottom: 28px; }
+  .deco-char {
+    font-size: 110px;
+    right: 16px;
+    top: 16px;
+  }
+  .rq-text { font-size: 15px; }
+  .start-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+  .method-pills { gap: 6px; }
+  .pill { font-size: 10px; padding: 4px 9px; }
+
+  /* Section headers */
+  .content-wrap { padding: 36px 20px 56px; }
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+  }
+  .section-num { font-size: 34px; }
+  .section-info h2 { font-size: 22px; }
+
+  /* Prose */
+  .prose { font-size: 15.5px; line-height: 1.75; }
+
+  /* Theory & method cards */
+  .theory-card { padding: 20px 18px; }
+  .theory-card h3 { font-size: 17px; }
+  .theory-card p { font-size: 14px; }
+  .method-step { padding: 22px 18px; }
+
+  /* Findings */
+  .finding-header { gap: 12px; margin-bottom: 18px; }
+  .finding-header h3 { font-size: 18px; }
+  .finding-num { width: 30px; height: 30px; font-size: 14px; }
+  .chart-frame { padding: 14px 12px; }
+  .insight-card { padding: 14px 16px; }
+  .insight-card p { font-size: 13.5px; }
+
+  /* Side-by-side chart frames in Findings page 2&3 */
+  .finding-block > div[style*="grid-template-columns:1fr 1fr"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Network SVG containers */
+  .net-card svg { height: 260px; }
+
+  /* Data page */
+  .data-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .data-stat { padding: 18px 12px; }
+  .stat-num { font-size: 36px; }
+  .label-table { font-size: 13.5px; }
+  .label-table th, .label-table td { padding: 10px 12px; }
+
+  /* Data download cards & spatial categories — force single column */
+  div[style*="grid-template-columns:1fr 1fr"][style*="margin-bottom:48px"],
+  div[style*="grid-template-columns:1fr 1fr"][style*="gap:24px"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Colophon AI cards — single column */
+  div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Methodology page two-column area */
+  .content-wrap > div[style*="grid-template-columns:1fr 1fr"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Conclusion key findings */
+  .key-findings-box { padding: 22px 20px; margin: 28px 0; }
+  .kf-item { font-size: 14px; }
+  .limitations { padding: 20px 22px; }
+  .lim-item { font-size: 13.5px; }
+
+  /* Footer */
+  .site-footer { padding: 18px 20px; font-size: 11px; line-height: 1.6; }
+}
+
+/* ── Small phones ── */
+@media (max-width: 480px) {
+  .data-grid { grid-template-columns: 1fr; }
+  .hero-left, .hero-right { padding: 36px 22px 32px; }
+  .hero-title { font-size: clamp(22px, 7vw, 30px); }
+  .rq-block { margin-bottom: 22px; }
+  .section-num { font-size: 28px; }
+  .section-info h2 { font-size: 19px; }
+  .finding-header h3 { font-size: 16px; }
+  .theory-card h3 { font-size: 16px; }
+  nav button { padding: 8px 11px; font-size: 10px; letter-spacing: 0.06em; }
+}
+
+/* ── Print / PDF-friendly ── */
+@media print {
+  .site-header, .site-footer { display: none; }
+  .page { display: block !important; page-break-after: always; }
+  body { background: white; }
+}
 </style>
 </head>
 <body>
@@ -1202,6 +1374,26 @@ window.showPage = function(id, btn) {
     setTimeout(function(){ renderCharts(); renderNetworks(); }, 80);
   }
 };
+
+// ── RESIZE HANDLER — keep charts & networks responsive ───────
+var _resizeTimer;
+window.addEventListener('resize', function() {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(function() {
+    if (!window._chartsRendered) return;
+    // Plotly charts auto-resize via {responsive:true}, but trigger a manual resize too
+    ['chart-discourse','chart-spaceA','chart-spaceB'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && window.Plotly) { try { Plotly.Plots.resize(el); } catch(e){} }
+    });
+    // Re-render D3 networks at new dimensions
+    ['svgFF_A','svgFM_A','svgFF_B','svgFM_B'].forEach(function(id){
+      var svg = document.getElementById(id);
+      if (svg) svg.innerHTML = '';
+    });
+    if (typeof renderNetworks === 'function') renderNetworks();
+  }, 250);
+});
 
 // ── PLOTLY CHARTS ────────────────────────────────────────────
 function renderCharts() {
